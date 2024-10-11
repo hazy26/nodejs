@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Alexis Turcotte">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="svg" href="./favicon.svg">
+    <title>Présentation de Node.js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/night.css">
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <style>
+      body{
+        background-color: rgb(63, 107, 117) !important;
+      }
+
+      h1{
+        font-size: 14rem !important;
+      }
+
+      .author{
+        font-size: 1.5rem !important;
+      }
+
+      p{
+        font-size: 2rem !important;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="reveal">
+        <div class="slides">
+          <section data-transition="zoom">
+            <h1>Node.js</h1>
+            <h2 class="author">Par Alexis Turcotte</h2>
+          </section>
+          <!-- PARTIE 1 -->
+          <section data-transition="fade">
+            <h2>Partie 1</h2>
+          </section>
+          <section class="historique" data-transition="zoom">
+            <section>
+              <h3>Brève historique</h3>
+              <p class="fragment">Node.js fut créer par Ryan Dahl et vu le jour avec sa première version en 2009.</p>
+              <p class="fragment">Et gagna rapidement en popularité pour le développement d'applications.</p>
+              <p class="fragment">Node.js se base sur la réutilisation de modules (depedencies).</p>
+              <p class="fragment">Ce framework open-source est construit sur le moteur javascript V8 de Google.</p>
+            </section>
+            <section>
+              <p class="fragment">En 2010, l'arrivé de Node Package Manager (NPM) facilita grandement le partage et la réutilisaion de code entre développeurs.</p> 
+              <p class="fragment">Aujourd'hui, plus de 3.1 million de paquets sont disponibles sur npm.</p> 
+              <p class="fragment">Node.js vu plusieurs mises à jour depuis ça première version, dont fréquement des améliorations de la performance et de la stabilité du framework</p>
+            </section>
+            <section>
+              <h4>Voici quelques applications notables construitent sur Node.js:</h4>
+              <p class="fragment">Amazon, Ebay, Linkedin, NASA, Netflix, Paypal, Uber, et plusieurs autres.</p>
+            </section>
+            <section>
+              <h5>Pour plus d'infos:</h5>
+              <a href="https://nodejs.org/en/about" target="_blank">À propos de Node.js</a>  
+            </section>
+          </section>
+          <section class="introduction" data-transition="zoom">
+            <section>
+              <h3>Introduction</h3>
+              <p class="fragment">Comme mentionné plus tôt, Node.js est un framework open-source, et qui est basé sur l'utilisation de modules (depedencies).</p>
+              <p class="fragment">Chaque développeur peut créer des modules et ensuite les partager aux autres devs grâce à npm (le package manager standard de node.js).</p>
+            </section>
+            <section>
+              <p class="fragment">Lorsque Node.js exécute un opération I/O, par exemple accéder à une base de données, au lieu d'attendre la réponse (si elle n'est pas immédiate), Node.js va reprendre l'opération une fois que la réponse revient.</p>
+              <p class="fragment">Cela permet une multitudes de connexions simultanées dans un même serveur sans devoir gérer la concurrence des threads (qui peut engendrer plusieurs bugs).</p>
+            </section>
+            <section>
+              <p class="fragment">Node.js nous permet d'exécuter du javascript tant du côté client que du côté serveur.</p>
+              <p class="fragment">Ce qui nous donne la possibilité de faire du full-stack en utilisant seulement du javascript.</p>
+              <p class="fragment">C'est sur le moteur javascript V8 qu'est construit Node.js. Le même moteur qui, lorsque l'on navique sur Chrome, prend notre javascript et l'exécute.</p>
+              <p class="fragment">Il est conçu pour être rapide, léger et efficace.</p>
+            </section>
+            <section>
+              <h4>En savoir plus:</h5>
+              <a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs" target="_blank">Introduction à Node.js</a>
+            </section>
+          </section>
+          <section class="modules" data-transition="zoom">
+            <h3>Modules</h3>
+            <h4 class="fragment">Quelques modules important de Node.js:</h4>
+            <p class="fragment">http, util, fs, url, querystring, stream, zlib</p>
+            <h5 class="fragment">En savoir plus:</h5>
+            <a class="fragment" href="https://nodejs.org/docs/latest/api/" target="_blank">Node.js Docs</a>
+          </section>
+          <section class="objects" data-transition="zoom">
+            <h3>Global objects</h3>
+            <h4 class="fragment">Quelques global objects important de Node.js:</h4>
+            <p class="fragment">__dirname, __filename, exports, module, require, PUG</p> 
+            <h5 class="fragment">En savoir plus:</h5>
+            <ul class="fragment">
+              <li>
+                <a href="https://www.javatpoint.com/nodejs-global-objects" target="_blank">Node.js Globals</a>
+              </li>
+              <li>
+                <a href="https://nodejs.org/docs/latest/api/globals.html" target="_blank">Node.js Docs - Globals</a>  
+              </li>
+            </ul>
+          </section>
+          <section class="erreurs" data-transition="zoom">
+            <h3>Erreurs</h3>
+            <h4 class="fragment">Il y a 4 types d'erreurs dans Node.js:</h4>
+            <p class="fragment">Javascript standard errors, System errors, User-specified errors, Assertion errors</p>
+            <h5 class="fragment">En savoir plus:</h5>
+            <ul class="fragment">
+              <li>
+                <a href="https://nodejs.org/docs/latest/api/errors.html" target="_blank">Node.js Docs - Errors</a>
+              </li>
+              <li>
+                <a href="https://www.javatpoint.com/nodejs-errors" target="_blank">Node.js Errors</a>
+              </li>
+            </ul>
+          </section>
+          <section class="browser-vs-node" data-transition="zoom">
+            <section>
+              <h3>La différence entre Node.js et le navigateur</h3>
+              <p class="fragment">Les deux utilisent Javascript en tant que leur langage de programmation.</p>
+              <p class="fragment">Cependant, construire un application qui fonctionne dans le navigateur est très différentre qu'une app Node.js</p>
+            </section>
+            <section>
+              <p class="fragment">L'une des principales différences est que dans le navigateur nous manipulons le DOM, alors que sur Node.js, nous manipulons des modules.</p>
+              <p class="fragment">De plus, Node.js nous donne accès au front-end, mais aussi au back-end en utilisant seulement du Javascript.</p>
+            </section>  
+          </section>
+          <section class="dev-vs-prod" data-transition="zoom">
+            <section>
+              <h3>La différence entre développement et production</h3>
+              <p class="fragment">Dans Node.js, il n'y a pas de différence entre un environnement de développement ou bien de production.</p>
+              <p class="fragment">Certaines librairies reconnaissent cependant la variable 'NODE_ENV', et initialise la valeur à 'development'.</p>
+              <p class="fragment">Toujours exécuter Node.js avec le 'NODE_EN=production'.</p>
+            </section>
+            <section>
+              <h5>En savoir plus:</h5>
+              <a href="https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production" target="_blank">Node.js Docs</a>
+            </section>
+          </section>
+          <section class="must-knows" data-transition="zoom">
+            <section>
+              <h3>Ce qui est recommandé d'apprendre</h3>
+              <p class="fragment">Afin de pouvoir profiter du plein potentiel de Node.js, il est important de connaître certains concepts clés de javascript.</p>
+            </section>
+            <section>
+              <h4>Voici ce qui important de connaître:</h4>
+              <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar" target="_blank">Lexical Structure</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" target="_blank">Expressions</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank">Data Types</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">Classes</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#what_is_a_variable" target="_blank">Variables</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" target="_blank">Function</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank">'this' operator</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">Arrow Functions</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" target="_blank">Loops</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope" target="_blank">Scopes</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Arrays</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template Literals</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank">Strict Mode</a></li>
+                <li><a href="https://nodejs.org/en/learn/getting-started/ecmascript-2015-es6-and-beyond" target="_blank">ECMAScript 2015 (ES6) and beyond</a></li>
+              </ul>
+            </section>
+            <section>
+              <p>Par la suite, il y a la programmation asynchrone qui est également une partie fondamentale de Node.js.</p>
+              <h4>Les concepts suivants vous aiderons a en apprendre davantage:</h4>
+              <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing" target="_blank">Asynchronous programming and callbacks</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout" target="_blank">Timers</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank">Promises</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">Async and Await</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">Closures</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop" target="_blank">The Event Loop</a></li>
+              </ul>
+            </section>
+            <section>
+              <h5>En savoir plus:</h5>
+              <a href="https://nodejs.org/en/learn/asynchronous-work/asynchronous-flow-control" target="_blank">Asynchronous Work - Docs</a>
+            </section>
+          </section>
+          <section class="installation" data-transition="zoom">
+            <section>
+              <h3>Installation de Node.js</h3>
+              <h4 class="fragment">Différentes façons s'offre nous sont offertes.</h4>
+            </section>
+            <section>
+              <p>Voici les plus simples:</p>
+              <ol>
+                <li class="fragment">
+                  <h5>En utilisant brew</h5>
+                  <p>Si vous avez besoin d'installer brew, cliquer ici:</p>
+                  <a href="https://brew.sh/" target="_blank">Homebrew</a>
+                </li>
+                <li class="fragment">
+                  <h5>En utilisant nvm (node version manager)</h5>
+                  <p>Si vous avez besoin d'installer nvm cliquer ici:</p>
+                  <a href="https://github.com/nvm-sh/nvm" target="_blank">Github nvm readme</a>
+                </li>
+                <li class="fragment">
+                  <p>Le télécharger directement sur: </p>
+                  <a href="https://nodejs.org/en" target="_blank">node.js</a>
+                </li>
+              </ol>
+              <p class="fragment">Rendez vous directement sur le site de Node.js pour voir les commandes terminal selon votre système d'exploitation.</p>
+              <a class="fragment" href="https://nodejs.org/fr/download/package-manager" target="_blank">Télécharger Node.js</a>
+            </section>
+          </section>
+          <section class="exemple" data-transition="zoom">
+            <section>
+              <h3>Exemple d'utilisation</h3>
+              <h4>Voici comment créer un serveur Node.js et afficher un simple message dans le navigateur.</h4>
+            </section>
+            <section>
+              <ol>
+                <li>Créer un nouveau dossier pour votre projet</li>
+                <li>Créer un fichier 'exemple.js'</li>
+                <li>Ouvrir ce dossier dans le terminal</li>
+                <li>Entrer la commande 'npm init'</li>
+                <li>Copier / Coller le code suivant</li>
+                <!-- 
+            const http = require('node:http');
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = http.createServer((req, res) => {
+              res.statusCode = 200;
+              res.setHeader('Content-Type', 'text/plain');
+              res.end('Bonjour tout le monde!');
+            });
+
+            server.listen(port, hostname, () => {
+              console.log(`Le serveur running at http://${hostname}:${port}/`);
+            });
+            -->
+                <li>Lancer le serveur à l'aide de la commande 'node exemple.js'</li>
+              </ol>
+            </section>
+          </section>
+          <section class="exercice-1" data-transition="zoom">
+            <h3>Exercice 01</h3>
+            <p class="fragment">Vous devez d'abord installer Node.js.</p>
+            <p class="fragment">Ensuite, compléter les demandes suivantes:</p>
+            <ul class="fragment">
+              <li>Afficher une page web à l'aide d'un serveur Node.js</li>
+            </ul>
+          </section>
+          <!-- PARTIE 2 -->
+          <section data-transition="fade">
+            <h2>Partie 2</h2>
+          </section>
+        </div>
+      </div>
+      <script>Reveal.initialize({
+        controls:false,
+        progress:false,
+        backgroundTransition: 'fade'
+      });</script>
+  </body>
+</html>
