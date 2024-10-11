@@ -25,6 +25,14 @@
       p{
         font-size: 2rem !important;
       }
+
+      a{
+        font-size: 1.5rem !important;
+      }
+
+      .js-docs{
+        column-count: 2 !important;
+      }
     </style>
   </head>
   <body>
@@ -32,7 +40,6 @@
         <div class="slides">
           <section data-transition="zoom">
             <h1>Node.js</h1>
-            <h2 class="author">Par Alexis Turcotte</h2>
           </section>
           <!-- PARTIE 1 -->
           <section data-transition="fade">
@@ -146,7 +153,7 @@
             </section>
             <section>
               <h4>Voici ce qui important de connaître:</h4>
-              <ul>
+              <ul class="js-docs fragment">
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar" target="_blank">Lexical Structure</a></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" target="_blank">Expressions</a></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank">Data Types</a></li>
@@ -165,8 +172,8 @@
             </section>
             <section>
               <p>Par la suite, il y a la programmation asynchrone qui est également une partie fondamentale de Node.js.</p>
-              <h4>Les concepts suivants vous aiderons a en apprendre davantage:</h4>
-              <ul>
+              <h4 class="fragment">Les concepts suivants vous aiderons a en apprendre davantage:</h4>
+              <ul class="fragment">
                 <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing" target="_blank">Asynchronous programming and callbacks</a></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout" target="_blank">Timers</a></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank">Promises</a></li>
@@ -184,33 +191,68 @@
             <section>
               <h3>Installation de Node.js</h3>
               <h4 class="fragment">Différentes façons s'offre nous sont offertes.</h4>
+              <h5 class="fragment">Voici les plus simples:</h5>
             </section>
             <section>
-              <p>Voici les plus simples:</p>
-              <ol>
-                <li class="fragment">
-                  <h5>En utilisant brew</h5>
-                  <p>Si vous avez besoin d'installer brew, cliquer ici:</p>
-                  <a href="https://brew.sh/" target="_blank">Homebrew</a>
-                </li>
-                <li class="fragment">
-                  <h5>En utilisant nvm (node version manager)</h5>
-                  <p>Si vous avez besoin d'installer nvm cliquer ici:</p>
-                  <a href="https://github.com/nvm-sh/nvm" target="_blank">Github nvm readme</a>
-                </li>
-                <li class="fragment">
-                  <p>Le télécharger directement sur: </p>
-                  <a href="https://nodejs.org/en" target="_blank">node.js</a>
-                </li>
-              </ol>
-              <p class="fragment">Rendez vous directement sur le site de Node.js pour voir les commandes terminal selon votre système d'exploitation.</p>
-              <a class="fragment" href="https://nodejs.org/fr/download/package-manager" target="_blank">Télécharger Node.js</a>
+              <h4>Pour les utilisateur Linux, MacOS et Windows</h4>
+              <h5 class="fragment">Le télécharger directement sur:</h5>
+              <a class="fragment" href="https://nodejs.org/en" target="_blank">node.js</a>
+            </section>
+            <section>
+              <h4>Pour les utilisateurs MacOS seulement</h4>
+              <h5 class="fragment">1. En utilisant brew</h5>
+              <p class="fragment">Besoin d'installer brew? Cliquer ici:</p>
+              <a class="fragment" href="https://brew.sh/" target="_blank">Homebrew</a>
+              <pre class="fragment">
+                <code data-trim data-noescape>
+                  #télécharger et installer Node.js
+                  brew install node@20 (ou la version désirer)
+
+                  node -v  #devrait imprimer la version de node
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h5>2. En utilisant nvm (node version manager)</h5>
+              <p class="fragment">Besoin d'installer nvm cliquer ici:</p>
+              <a class="fragment" href="https://github.com/nvm-sh/nvm" target="_blank">nvm Github ReadMe</a>
+              <pre class="fragment">
+                <code data-trim data-noescape>
+                  # installe nvm (Gestionnaire de version node)
+                  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+
+                  # télécharger et installer Node.js (il peut être nécessaire de redémarrer le terminal)
+                  nvm install 20
+
+                  node -v #devrait imprimer la version de node
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h4>Pour les utilisateurs Windows seulement</h4>
+              <h5 class="fragment">1. En utilisant fnm</h5>
+              <p class="fragment">Besoin d'installer fnm? Cliquer ici:</p>
+              <a class="fragment" href="https://github.com/Schniz/fnm" target="_blank">fnm Github ReadMe</a>
+              <pre class="fragment">
+                <code data-trim data-noescape>
+                  #installe fnm (Fast Node Manager)
+                  winget install Schniz.fnm
+                  
+                  #configurer l'environnement fnm
+                  fnm env --use-on-cd | Out-String | Invoke-Expression
+                  
+                  #télécharger et installer Node.js
+                  fnm use --install-if-missing 20
+                  
+                  node -v #devrait imprimer la version de node
+                </code>
+              </pre>
             </section>
           </section>
           <section class="exemple" data-transition="zoom">
             <section>
               <h3>Exemple d'utilisation</h3>
-              <h4>Voici comment créer un serveur Node.js et afficher un simple message dans le navigateur.</h4>
+              <h4 class="fragment">Voici comment créer un serveur Node.js et afficher un simple message dans le navigateur.</h4>
             </section>
             <section>
               <ol>
@@ -239,17 +281,10 @@
               </ol>
             </section>
           </section>
-          <section class="exercice-1" data-transition="zoom">
-            <h3>Exercice 01</h3>
-            <p class="fragment">Vous devez d'abord installer Node.js.</p>
-            <p class="fragment">Ensuite, compléter les demandes suivantes:</p>
-            <ul class="fragment">
-              <li>Afficher une page web à l'aide d'un serveur Node.js</li>
-            </ul>
-          </section>
           <!-- PARTIE 2 -->
           <section data-transition="fade">
-            <h2>Partie 2</h2>
+            <h2>À suivre...</h2>
+            <h4 class="fragment">...pour la Partie 2</h4>
           </section>
         </div>
       </div>
